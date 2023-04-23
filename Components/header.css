@@ -28,7 +28,7 @@
     background: #FEFCF3;
     color: #000;
     top: 1px;
-    transition: all 0.5s linear;
+    transition: all 0.3s ease-in-out;
 }
 .sidebar-close{
     right: -100%;

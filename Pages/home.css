@@ -21,6 +21,7 @@
     font-family: 'Cinzel',serif;
     transition: all 0.3s linear;
     cursor: pointer;
+    letter-spacing: 1px;
 }
 .btn:hover{
     background: #E4D1B9;
