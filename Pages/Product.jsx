@@ -2,17 +2,13 @@ import React, { useEffect } from 'react'
 import data from '../src/data'
 import { Link, useParams, useSearchParams } from 'react-router-dom'
 import './product.css'
-import Aos from 'aos'
-import 'aos/dist/aos.css'
 
 const Product = () => {
   const [searchParams, setSearchParams] = useSearchParams()
   
   const typeFilter = searchParams.get('type')
 
-useEffect(() => {
-Aos.init({duration:2000})
-},[])
+
 
 const filterArray = typeFilter ?  data.filter((item) => {
   return item.filterName === typeFilter
@@ -21,7 +17,7 @@ const filterArray = typeFilter ?  data.filter((item) => {
 const renderProducts = filterArray.map((product) => {
   return (
     <Link key={product.id} to={`${product.id}`}>
-      <div data-aos='fade-up'  className="feature-product">
+      <div  className="feature-product">
           <img className='feature-product-image' src={product.img} alt="image" />
           <div className="feature-product-details">
             <p className="feature-product-name">

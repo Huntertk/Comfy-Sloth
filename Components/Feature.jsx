@@ -4,13 +4,10 @@ import featureImageOne from '../src/assets/Images/prod-7.jpg'
 import featureImageTwo from '../src/assets/Images/prod-8.jpg'
 import featureImageThree from '../src/assets/Images/prod-11.jpg'
 import './feature.css'
-import Aos from 'aos'
-import 'aos/dist/aos.css'
+
 
 const Feature = () => {
-useEffect(() => {
-Aos.init({duration:2000})
-},[])
+
 
   return (
     <div className='feature-components'>
@@ -23,7 +20,7 @@ Aos.init({duration:2000})
 
   
       <Link to="products/12">
-        <div  className="feature-product" data-aos='fade-up'>
+        <div  className="feature-product">
           <img className='feature-product-image' src={featureImageOne} alt="image" />
           <div className="feature-product-details">
             <p className="feature-product-name">
