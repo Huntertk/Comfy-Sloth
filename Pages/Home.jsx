@@ -1,6 +1,7 @@
 import React from 'react'
 import './home.css'
 import Feature from '../Components/Feature'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
@@ -10,7 +11,9 @@ const Home = () => {
             <p className="home-para">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto, at sed omnis corporis doloremque possimus velit! Repudiandae nisi odit, aperiam odio ducimus, obcaecati libero et quia tempora excepturi quis alias?
             </p>
-            <button className='btn btn-buy rotate-scale-up'>SHOP NOW</button>
+            <Link to='products'>
+              <button className='btn btn-buy rotate-scale-up'>SHOP NOW</button>
+            </Link>
         </div>
         <Feature />
     </section>

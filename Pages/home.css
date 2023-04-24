@@ -29,7 +29,9 @@
     color: #A97155;
     
 }
-
+a{
+    text-decoration: none;
+}
 
 .rotate-scale-up:hover,
 .rotate-scale-up:active{

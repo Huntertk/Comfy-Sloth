@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
-import logo from '../src/assets/Images/logo.svg'
+import { NavLink } from 'react-router-dom'
 import './header.css'
+
+import logo from '../src/assets/Images/logo.svg'
+
+
 const Header = () => {
     const [isOpen, setOpen] = useState(false)
 
@@ -11,14 +15,28 @@ const Header = () => {
     }
   return (
     <nav className='header-nav'>
-        <img src={logo} alt="logo" className='header-logo' />
+        <NavLink to='/' >
+            <img src={logo} alt="logo" className='header-logo' />
+            
+        </NavLink>
         <i className="fa-solid fa-bars sidebar-icon-open" onClick={openNavBar}></i>
         <div className={`navlink-container  ${isOpen ? 'sidebar-open' : 'sidebar-close'}`}>
             <i className="fa-solid fa-x sidebar-icon-close" onClick={openNavBar}></i>
-            <img src={logo} alt="logo" className='header-logo sidebar-logo' />
-            <span className='nav-links'>Home</span>
-            <span className='nav-links'>Product</span>
-            <span className='nav-links'>About</span>
+            <NavLink to='/'>
+                <img src={logo} alt="logo" className='header-logo sidebar-logo'  onClick={() => {return setOpen(false)}}/>
+            </NavLink>
+
+            <NavLink to='/'>
+                <span className='nav-links'  onClick={() => {return setOpen(false)}}>Home</span>
+            </NavLink>
+
+            <NavLink to="products">
+                <span className='nav-links'  onClick={() => {return setOpen(false)}}>Product</span>
+            </NavLink>
+
+            <NavLink to="about">
+                <span className='nav-links'  onClick={() => {return setOpen(false)}}>About</span>
+            </NavLink>
         </div>
     </nav>
   )
