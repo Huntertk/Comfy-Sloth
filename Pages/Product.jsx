@@ -5,7 +5,7 @@ import './product.css'
 
 const Product = () => {
   const [searchParams, setSearchParams] = useSearchParams()
-
+  
   const typeFilter = searchParams.get('type')
 
 
@@ -17,17 +17,17 @@ const filterArray = typeFilter ?  data.filter((item) => {
 const renderProducts = filterArray.map((product) => {
   return (
     <Link key={product.id} to={`${product.id}`}>
-  <div  className="feature-product">
-        <img className='feature-product-image' src={product.img} alt="image" />
-        <div className="feature-product-details">
-          <p className="feature-product-name">
-            {product.name}
-          </p>
-          <p className="feature-product-price">
-            ₹ {product.price}
-          </p>
+      <div  className="feature-product">
+          <img className='feature-product-image' src={product.img} alt="image" />
+          <div className="feature-product-details">
+            <p className="feature-product-name">
+              {product.name}
+            </p>
+            <p className="feature-product-price">
+              ₹ {product.price}
+            </p>
+          </div>
         </div>
-      </div>
     </Link>
   )
 })

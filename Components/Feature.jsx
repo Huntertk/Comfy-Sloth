@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import featureImageOne from '../src/assets/Images/prod-7.jpg'
 import featureImageTwo from '../src/assets/Images/prod-8.jpg'
 import featureImageThree from '../src/assets/Images/prod-11.jpg'
@@ -6,47 +7,55 @@ import './feature.css'
 
 const Feature = () => {
 
-
-  const featureData = [
-    {
-      id: 1,
-      name: 'Entertainment Center',
-      price: '25,999',
-      img: featureImageOne
-    },
-    {
-      id: 2,
-      name: 'High-Back Bench',
-      price: '5,990',
-      img: featureImageTwo
-    },
-    {
-      id: 3,
-      name: 'Modern Bookshelf',
-      price: '30,990',
-      img: featureImageThree
-    },
-  ]
-
-
-  const renderFeatureProduct = featureData.map((product) => {
-    return  <div key={product.id} className="feature-product">
-        <img className='feature-product-image' src={product.img} alt="image" />
-        <div className="feature-product-details">
-          <p className="feature-product-name">
-            {product.name}
-          </p>
-          <p className="feature-product-price">
-            ₹ {product.price}
-          </p>
-        </div>
-      </div>
-  })
   return (
     <div className='feature-components'>
       <h1 className="feature-heading">Featured Product</h1>
       <div className="underline"></div>
-      {renderFeatureProduct}
+
+      <Link to="products/12">
+        <div  className="feature-product">
+          <img className='feature-product-image' src={featureImageOne} alt="image" />
+          <div className="feature-product-details">
+            <p className="feature-product-name">
+              Entertainment Center
+            </p>
+            <p className="feature-product-price">
+              ₹ 54599.99
+            </p>
+          </div>
+        </div>
+      </Link>
+
+<Link to='products/9'>
+
+      <div  className="feature-product">
+        <img className='feature-product-image' src={featureImageTwo} alt="image" />
+        <div className="feature-product-details">
+          <p className="feature-product-name">
+            High-Back Bench
+          </p>
+          <p className="feature-product-price">
+            ₹ 34199.99
+          </p>
+        </div>
+      </div>
+</Link>
+
+
+    <Link to="products/8">
+
+      <div className="feature-product">
+        <img className='feature-product-image' src={featureImageThree} alt="image" />
+        <div className="feature-product-details">
+          <p className="feature-product-name">
+            Modern Bookshelf
+          </p>
+          <p className="feature-product-price">
+            ₹ 31149.99
+          </p>
+        </div>
+      </div>
+    </Link>
     </div>
   )
 }
