@@ -1,11 +1,16 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import featureImageOne from '../src/assets/Images/prod-7.jpg'
 import featureImageTwo from '../src/assets/Images/prod-8.jpg'
 import featureImageThree from '../src/assets/Images/prod-11.jpg'
 import './feature.css'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 const Feature = () => {
+useEffect(() => {
+Aos.init({duration:2000})
+},[])
 
   return (
     <div className='feature-components'>
@@ -18,7 +23,7 @@ const Feature = () => {
 
   
       <Link to="products/12">
-        <div  className="feature-product">
+        <div  className="feature-product" data-aos='fade-up'>
           <img className='feature-product-image' src={featureImageOne} alt="image" />
           <div className="feature-product-details">
             <p className="feature-product-name">
