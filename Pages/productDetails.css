@@ -1,0 +1,42 @@
+.product-details-container{
+    margin-top: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.back-btn{
+    margin-top: 2rem;
+    margin-left: 1rem;
+}
+.product-details-img{
+    width: 95%;
+    border-radius: 6px;
+}
+.product-details-heading{
+    text-align: start;
+    margin-left: 0.5em;
+    margin-top: 2rem;
+    margin-bottom: 0.2em;
+}
+.product-details-price{
+    text-align: start;
+    margin-left: 1em;
+    margin-top: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.product-details-description{
+    text-align: start;
+    margin-left: 1rem;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    line-height: 1.6;
+}
+.product-availiabilty{
+    text-align: start;
+    margin-left: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+.product-stock{
+    margin-left: 2rem;
+}

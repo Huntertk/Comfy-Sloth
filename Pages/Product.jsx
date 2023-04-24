@@ -1,11 +1,22 @@
 import React from 'react'
 import data from '../src/data'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams, useSearchParams } from 'react-router-dom'
 import './product.css'
 
 const Product = () => {
-  console.log(useParams())
-const renderProducts = data.map((product) => {
+  const [searchParams, setSearchParams] = useSearchParams()
+
+  const typeFilter = searchParams.get('type')
+
+  console.log(typeFilter)
+console.log(`?${searchParams.toString()}`)
+
+
+const filterArray = typeFilter ?  data.filter((item) => {
+  return item.filterName === typeFilter
+}) : data
+
+const renderProducts = filterArray.map((product) => {
   return (
     <Link key={product.id} to={`${product.id}`}>
   <div  className="feature-product">
@@ -22,18 +33,51 @@ const renderProducts = data.map((product) => {
     </Link>
   )
 })
+
+
+const handleFilterChange = (key, value) => {
+  setSearchParams((prev) => {
+    if(value === null){
+      prev.delete(key)
+    } else{
+      prev.set(key, value)
+    }
+    return prev
+  })
+}
+
   console.log(data)
   return (
     <div className='products-container'>
       <h1 className='product-heading'>Products</h1>
       <div className="filter-btn-container">
-        <button className="filter-btn">Office</button>
-        <button className="filter-btn">Living Room</button>
-        <button className="filter-btn">Kitchen</button>
-        <button className="filter-btn">Bedroom</button>
-        <button className="filter-btn">Dining</button>
-        <button className="filter-btn">Kids</button>
-        <button className="filter-btn">Clear</button>
+        <button 
+        className="filter-btn"
+        onClick={() => { handleFilterChange('type', 'office') }}
+        >Office</button>
+        <button
+        className="filter-btn"
+        onClick={() => { handleFilterChange('type', 'living') }}
+        >Living Room</button>
+        <button 
+        className="filter-btn"
+        onClick={() => { handleFilterChange('type', 'kitchen') }}
+        >Kitchen</button>
+        <button 
+        className="filter-btn"
+        onClick={() => { handleFilterChange('type', 'bedroom') }}
+        >Bedroom</button>
+        <button 
+        className="filter-btn"
+        onClick={() => { handleFilterChange('type', 'dinning') }}
+        >Dining</button>
+        <button 
+        className="filter-btn"
+        onClick={() => { handleFilterChange('type', 'kids') }}
+        >Kids</button>
+        <button className="filter-btn"
+        onClick={() => { handleFilterChange('type', null) }}
+        >Clear</button>
       </div>
 
       {renderProducts}
