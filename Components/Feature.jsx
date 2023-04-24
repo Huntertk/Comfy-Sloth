@@ -9,9 +9,14 @@ const Feature = () => {
 
   return (
     <div className='feature-components'>
+      <div>
       <h1 className="feature-heading">Featured Product</h1>
       <div className="underline"></div>
+      </div>
 
+    <div className="feature-product-components">
+
+  
       <Link to="products/12">
         <div  className="feature-product">
           <img className='feature-product-image' src={featureImageOne} alt="image" />
@@ -56,6 +61,7 @@ const Feature = () => {
         </div>
       </div>
     </Link>
+      </div>
     </div>
   )
 }

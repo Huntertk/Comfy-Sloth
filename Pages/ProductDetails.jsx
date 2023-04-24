@@ -14,6 +14,8 @@ const ProductDetails = () => {
         <button className='btn back-btn'>Back to All Products</button>
         </NavLink>
       <div className='product-details-container'>
+        <div>
+
         <img className='product-details-img' src={productDetailsRender[0].img} alt="" />
         <h1 className='product-details-heading'>{productDetailsRender[0].name}</h1>
         <p className="product-details-price">₹ {productDetailsRender[0].price}</p>
@@ -22,6 +24,7 @@ const ProductDetails = () => {
         </p>
         <div className="underline"></div>
         <p className="product-availiabilty">Available : <span className='product-stock'>In Stock</span></p>
+        </div>
       </div>
     </>
   )

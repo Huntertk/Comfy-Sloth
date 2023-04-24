@@ -45,11 +45,19 @@
     color: #A97155;
     transition: all 0.3s linear;
 }
-.nav-links:hover{
+/* .nav-links:hover{
     color: #fff;
-    padding: 1rem 2rem;
+    padding: 0.65rem 1rem;
     background-color: #A97155;
     border-radius: 8px;
+} */
+.activeStyle{
+    color: #fff;
+    padding: 0.3rem 0.6rem;
+    background-color: transparent;
+    border-radius: 8px;
+    border: 1px solid #A97155;
+    margin-left: 0.3rem;
 }
 .sidebar-icon-close{
     position: absolute;
@@ -61,4 +69,25 @@
 
 a{
     text-decoration: none;
+}
+
+
+@media screen and (min-width: 700px) {
+    .navlink-container{
+        position: unset;
+        color: #000;
+        visibility: visible;
+        flex-direction: row;
+        align-items: center;
+        justify-content: end;
+    }
+    .nav-links{
+        font-size: 1.1rem;
+        margin-left: 1rem;
+    }
+    .sidebar-icon-open,
+    .sidebar-icon-close,
+    .sidebar-logo{
+        display: none;
+    }
 }

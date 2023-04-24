@@ -24,7 +24,7 @@ const renderProducts = filterArray.map((product) => {
               {product.name}
             </p>
             <p className="feature-product-price">
-              ₹ {product.price}
+              ₹{product.price}
             </p>
           </div>
         </div>
@@ -47,6 +47,7 @@ const handleFilterChange = (key, value) => {
   return (
     <div className='products-container'>
       <h1 className='product-heading'>Products</h1>
+      <div className="underline"></div>
       <div className="filter-btn-container">
         <button 
         className={`filter-btn ${typeFilter === 'office' ? 'activateBtn' : ''}`}
@@ -72,12 +73,17 @@ const handleFilterChange = (key, value) => {
         className={`filter-btn ${typeFilter === 'kids' ? 'activateBtn' : ''}`}
         onClick={() => { handleFilterChange('type', 'kids') }}
         >Kids</button>
-        <button className="filter-btn"
-        onClick={() => { handleFilterChange('type', null) }}
-        >Clear</button>
-      </div>
 
-      {renderProducts}
+        {
+          typeFilter && 
+          <button className="filter-btn"
+          onClick={() => { handleFilterChange('type', null) }}
+          >Clear</button>
+        }
+      </div>
+      <div className="container-product">
+        {renderProducts}
+      </div>
 
     </div>
   )

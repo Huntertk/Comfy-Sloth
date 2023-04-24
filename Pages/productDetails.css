@@ -40,3 +40,14 @@
 .product-stock{
     margin-left: 2rem;
 }
+
+@media screen and (min-width: 700px) {
+    .product-details-container{
+        display: flex;
+        flex-direction: row;
+        margin-left: 2rem;
+    }
+    .product-details-img{
+        width: 300px;
+    }
+}

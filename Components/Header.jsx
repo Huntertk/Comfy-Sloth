@@ -7,6 +7,7 @@ import logo from '../src/assets/Images/logo.svg'
 
 const Header = () => {
     const [isOpen, setOpen] = useState(false)
+    
 
     const openNavBar = () => {
         setOpen((prev) => {
@@ -26,15 +27,20 @@ const Header = () => {
                 <img src={logo} alt="logo" className='header-logo sidebar-logo'  onClick={() => {return setOpen(false)}}/>
             </NavLink>
 
-            <NavLink to='/'>
+            <NavLink to='/' 
+            className={({isActive}) => {return isActive ? 'activeStyle' : null}}
+            >
                 <span className='nav-links'  onClick={() => {return setOpen(false)}}>Home</span>
             </NavLink>
 
-            <NavLink to="products">
+            <NavLink to="products"
+            className={({isActive}) => {return isActive ? 'activeStyle' : null}}>
                 <span className='nav-links'  onClick={() => {return setOpen(false)}}>Product</span>
             </NavLink>
 
-            <NavLink to="about">
+            <NavLink to="about"
+            className={({isActive}) => {return isActive ? 'activeStyle' : null}}
+            >
                 <span className='nav-links'  onClick={() => {return setOpen(false)}}>About</span>
             </NavLink>
         </div>
