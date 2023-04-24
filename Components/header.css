@@ -24,28 +24,38 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    position: absolute;
+    position: fixed;
     background: #FEFCF3;
     color: #000;
     top: 1px;
+    right: 1px;
     transition: all 0.3s ease-in-out;
 }
 .sidebar-close{
-    right: -100%;
+    visibility: hidden;
+    top: -100%;
 }
 .sidebar-open {
-    right: 1px;
+    top: 1px;
 }
 .nav-links{
     font-size: 2.5rem;
     font-family: 'Cinzel', serif;
     font-weight: 600;
     color: #A97155;
+    transition: all 0.3s linear;
+}
+.nav-links:hover{
+    color: #fff;
+    padding: 1rem 2rem;
+    background-color: #A97155;
+    border-radius: 8px;
 }
 .sidebar-icon-close{
     position: absolute;
     top: 2%;
     font-size: 2.5rem;
     right: 5%;
+    color: #ff0000;
 }
 

@@ -1,0 +1,34 @@
+.feature-components{
+    margin-top: 5rem;
+    text-align: center;
+}
+.feature-heading{
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 0.3em;
+}
+.underline{
+    margin: 0 auto;
+    height: 4px;
+    width: 20%;
+    background: #A97155;
+}
+
+.feature-product{
+    margin-top: 4rem;
+}
+.feature-product-image{
+    width: 98%;
+    border-radius: 6px;
+}
+.feature-product-details{
+    display: flex;
+    justify-content: space-between;
+}
+.feature-product-name,
+.feature-product-price{
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
