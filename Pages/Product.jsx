@@ -8,8 +8,6 @@ const Product = () => {
 
   const typeFilter = searchParams.get('type')
 
-  console.log(typeFilter)
-console.log(`?${searchParams.toString()}`)
 
 
 const filterArray = typeFilter ?  data.filter((item) => {
@@ -46,33 +44,32 @@ const handleFilterChange = (key, value) => {
   })
 }
 
-  console.log(data)
   return (
     <div className='products-container'>
       <h1 className='product-heading'>Products</h1>
       <div className="filter-btn-container">
         <button 
-        className="filter-btn"
+        className={`filter-btn ${typeFilter === 'office' ? 'activateBtn' : ''}`}
         onClick={() => { handleFilterChange('type', 'office') }}
         >Office</button>
         <button
-        className="filter-btn"
+      className={`filter-btn ${typeFilter === 'living' ? 'activateBtn' : ''}`}
         onClick={() => { handleFilterChange('type', 'living') }}
         >Living Room</button>
         <button 
-        className="filter-btn"
+        className={`filter-btn ${typeFilter === 'kitchen' ? 'activateBtn' : ''}`}
         onClick={() => { handleFilterChange('type', 'kitchen') }}
         >Kitchen</button>
         <button 
-        className="filter-btn"
+        className={`filter-btn ${typeFilter === 'bedroom' ? 'activateBtn' : ''}`}
         onClick={() => { handleFilterChange('type', 'bedroom') }}
         >Bedroom</button>
         <button 
-        className="filter-btn"
+        className={`filter-btn ${typeFilter === 'dinning' ? 'activateBtn' : ''}`}
         onClick={() => { handleFilterChange('type', 'dinning') }}
         >Dining</button>
         <button 
-        className="filter-btn"
+        className={`filter-btn ${typeFilter === 'kids' ? 'activateBtn' : ''}`}
         onClick={() => { handleFilterChange('type', 'kids') }}
         >Kids</button>
         <button className="filter-btn"

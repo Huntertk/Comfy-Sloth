@@ -5,11 +5,9 @@ import './productDetails.css'
 
 const ProductDetails = () => {
     const param = useParams()
-    console.log(param)
     const productDetailsRender = data.filter((product) => {
         return product.id === Number(param.id)
     })
-    console.log(productDetailsRender)
   return (
     <>
       <NavLink to='/products'>
